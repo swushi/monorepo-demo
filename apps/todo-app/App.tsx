@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { greeting } from 'test-package';
 
-// @ts-ignore 
+// @ts-ignore environment variables
 import { IDK, WHAT, PLEASE } from '@env';
 
 console.log(IDK, WHAT, PLEASE)
