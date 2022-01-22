@@ -1,0 +1,21 @@
+{
+  "name": "monorepo-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "workspaces-run --parallel -- npm run dev",
+    "add": "npm install --package-lock-only --no-package-lock --prefix",
+    "postadd": "npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "workspaces-run": "^1.0.1"
+  }
+}
