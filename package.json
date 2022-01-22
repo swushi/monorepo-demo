@@ -6,6 +6,8 @@
   "scripts": {
     "workspaces-parallel": "workspaces-run --parallel -- npm run",
     "dev": "npm run workspaces-parallel dev",
+    "dev.app": "cd apps/todo-app && npm run dev",
+    "dev.api": "cd apps/api && npm run dev",
     "clean": "npm run workspaces-parallel clean"
   },
   "keywords": [],
