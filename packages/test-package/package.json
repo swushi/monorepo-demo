@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec \"npm run build && nodemon dist/src/index.js\" --watch src -e ts",
+    "clean": "rm -rf dist",
     "build": "tsc"
   },
   "keywords": [],

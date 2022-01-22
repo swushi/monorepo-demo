@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "workspaces-run --parallel -- npm run dev"
+    "workspaces-parallel": "workspaces-run --parallel -- npm run",
+    "dev": "npm run workspaces-parallel dev",
+    "clean": "npm run workspaces-parallel clean"
   },
   "keywords": [],
   "author": "",
