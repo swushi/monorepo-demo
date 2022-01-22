@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "workspaces-run --parallel -- npm run dev",
-    "add": "npm install --package-lock-only --no-package-lock --prefix",
-    "postadd": "npm install"
+    "dev": "workspaces-run --parallel -- npm run dev"
   },
   "keywords": [],
   "author": "",
