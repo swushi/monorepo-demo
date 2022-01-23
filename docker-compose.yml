@@ -4,11 +4,15 @@ services:
   db:
     image: postgres:latest
     restart: always
-    working_dir: /usr/src/db
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      PGPASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGPASSWORD: ${DB_PASSWORD}
     ports:
       - $DB_PORT:5432
+    volumes:
+      - "db_data:/var/lib/postgresql/data"
+
+volumes:
+  db_data:
