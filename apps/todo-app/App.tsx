@@ -1,17 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { greeting } from 'test-package';
+import { greeting, usePackage } from 'test-package';
 
 // @ts-ignore environment variables
 import { IDK, WHAT, PLEASE } from '@env';
 
-console.log(IDK, WHAT, PLEASE)
-
 export default function App() {
+  usePackage();
   return (
     <View style={styles.container}>
-      <Text>{greeting}</Text>
-      <StatusBar style="auto" />
+      <Text style={{ color: '#fff' }}>{greeting}</Text>
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -19,7 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
   },
