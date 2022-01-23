@@ -27,8 +27,7 @@
       "build": {
         "outputs": ["dist/src/**", "dist/**", ".turbo/**"],
         "dependsOn": [
-          "^build",
-          "clean"
+          "^build"
         ]
       },
       "test": {
