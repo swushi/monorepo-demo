@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "workspaces-parallel": "workspaces-run --parallel -- npm run",
-    "dev": "npm run workspaces-parallel dev",
+    "dev": "turbo run dev --parallel",
     "dev.app": "cd apps/todo-app && npm run dev",
     "dev.api": "cd apps/api && npm run dev",
-    "clean": "npm run workspaces-parallel clean"
+    "clean": "turbo run clean",
+    "build": "turbo run build"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,31 @@
     "apps/*"
   ],
   "devDependencies": {
+    "turbo": "^1.0.28",
     "workspaces-run": "^1.0.1"
+  },
+  "turbo": {
+    "baseBranch": "origin/main",
+    "pipeline": {
+      "build": {
+        "outputs": ["dist/src/**", "dist/**", ".turbo/**"],
+        "dependsOn": [
+          "^build",
+          "clean"
+        ]
+      },
+      "test": {
+        "dependsOn": [
+          "^build"
+        ]
+      },
+      "lint": {},
+      "clean": {
+        "cache": false
+      },
+      "dev": {
+        "cache": false
+      }
+    }
   }
 }
