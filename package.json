@@ -9,6 +9,7 @@
     "clean": "turbo run clean",
     "build": "turbo run build",
     "db.migrate": "knex migrate:latest",
+    "db.migrate.make": "knex migrate:make",
     "db.migrate.rollback": "knex migrate:rollback --all",
     "db.seed": "knex seed:run"
   },
